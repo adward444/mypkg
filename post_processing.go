@@ -6,7 +6,7 @@ type PostProcessingBase struct {
 
 }
 
-func (* PostProcessingBase) afterCheckout() {
+func (* PostProcessingBase) AfterCheckout() {
 	fmt.Println("This is base operate")
 }
 
@@ -14,7 +14,7 @@ type PostProcessingAU struct {
 	PostProcessingBase
 }
 
-func (* PostProcessingAU) afterCheckout() {
+func (* PostProcessingAU) AfterCheckout() {
 	fmt.Println("This is AU different operate")
 }
 
@@ -22,16 +22,16 @@ type PostProcessingJP struct {
 	PostProcessingBase
 }
 
-func (* PostProcessingJP) afterCheckout() {
+func (* PostProcessingJP) AfterCheckout() {
 	fmt.Println("This is JP different operate")
 }
 
-func test() {
+func PostProcessingTest() {
 	p1 := PostProcessingAU{}
-	p1.PostProcessingBase.afterCheckout()
-	p1.afterCheckout()
+	p1.PostProcessingBase.AfterCheckout()
+	p1.AfterCheckout()
 
 	p2 := PostProcessingJP{}
-	p2.PostProcessingBase.afterCheckout()
-	p2.afterCheckout()
+	p2.PostProcessingBase.AfterCheckout()
+	p2.AfterCheckout()
 }

@@ -31,7 +31,7 @@ func CalcTax(tc TaxCalculator) float64 {
 }
 
 
-func test1()  {
+func TaxTest1()  {
 	siteMode := "IncludeTax"
 
 	//if siteMode == "IncludeTax" {
@@ -54,7 +54,7 @@ func test1()  {
 	fmt.Println(tax)
 }
 
-func test2()  {
+func TaxTest2()  {
 	structName := "IncludeTaxMode"
 	structType := reflect.TypeOf(structName)
 
@@ -88,7 +88,7 @@ func newStruct(name string) (interface{}, bool) {
 	return reflect.New(elem).Elem().Interface(), true
 }
 
-func test3()  {
+func TaxTest3()  {
 	structName := "IncludeTaxMode"
 	s, ok := newStruct(structName)
 	if !ok {
